@@ -1,0 +1,17 @@
+name: CI Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: |
+          Select Branch:
+            main         → test_math.py
+            dev          → test_large.py
+            feature/test → test_decimal.py
+        type: choice
+        options:
+          - main
+          - dev
+          - feature/test
+        default: main
